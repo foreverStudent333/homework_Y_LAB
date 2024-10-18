@@ -1,11 +1,13 @@
 package habitsTrackApp.model;
 
-import java.util.ArrayList;
-
+/**
+ * Класс описывающий сущность администратор
+ *
+ * @author Mihail Harhan
+ */
 public class Admin {
     private Integer id;
     private String name;
-    private ArrayList<User> users = new ArrayList<>();
 
     public Admin(String name) {
         this.name = name;
@@ -19,15 +21,19 @@ public class Admin {
         this.name = name;
     }
 
-    public ArrayList<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
-    }
-
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

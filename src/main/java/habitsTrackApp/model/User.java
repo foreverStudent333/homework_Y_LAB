@@ -1,13 +1,16 @@
 package habitsTrackApp.model;
 
-import java.util.ArrayList;
-
+/**
+ * Класс описывающий сущность пользователь
+ *
+ * @author Mihail Harhan
+ */
 public class User {
     private Integer id;
     private String password;
     private String email;
     private String name = "";
-    private ArrayList<Habit> habits = new ArrayList<>();
+    private boolean isBlocked = false;
 
     public User(String password, String email) {
         this.password = password;
@@ -44,15 +47,30 @@ public class User {
         this.name = name;
     }
 
-    public ArrayList<Habit> getHabits() {
-        return habits;
-    }
-
-    public void setHabits(ArrayList<Habit> habits) {
-        this.habits = habits;
-    }
-
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isBlocked() {
+        return isBlocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        isBlocked = blocked;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", isBlocked=" + isBlocked +
+                '}';
     }
 }
